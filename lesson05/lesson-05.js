@@ -1,10 +1,10 @@
 let titleProject = prompt('Название проекта?');
 let screensValue = prompt('Типы экранов через запятую');
-let responsive = prompt('Сайт должен быть отзывчивым (да/нет) ?');
+let responsive = prompt('Сайт должен быть отзывчивым (да/нет) ?').toLowerCase();
 let screenPrice = 12500;
 let percentage = 15;
 
-if (responsive = 'да') {
+if (responsive == 'да') {
     responsive = 'Сайт должен быть отзывчивым';
 } else {
     responsive = 'Отзывчивость не нужна';
