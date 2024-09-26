@@ -70,6 +70,7 @@ const getTitle = function () {
 
 
 
+let showFullPrice = function() {
 if(fullPrice > 50000) {
     console.log('Делаем скидку 10%');
 } else if(fullPrice > 20000 && fullPrice < 40000) {
@@ -80,6 +81,7 @@ if(fullPrice > 50000) {
     console.log('Что-то пошло не так');
 } else if(fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) {
     console.log('Строгое неравенство');
+}
 }
 
 
@@ -92,9 +94,10 @@ newTitle = getTitle();
 
 
 
-console.log(titleProject);
+console.log(newTitle);
 console.log(screenValue);
 console.log(responsive);
 console.log(service);
 console.log(serviceSecond);
 console.log(Math.ceil(servicePercentPrice))
+showFullPrice();
