@@ -1,4 +1,4 @@
-let screenPrice = 10000
+let screenPrice;
 let percentage = 10
 let allServicePrices;
 let newTitle = '';
@@ -19,9 +19,18 @@ const checkIsNumber = function(value) {
 
 
 const asking = function() {
-titleProject = prompt('Название проекта')
-screenValue = prompt('Шаблоны с уникальным дизайном, с анимациями')
-responsive = prompt('Сайт должен быть отзывчивым?')
+    titleProject = prompt('Название проекта')
+    screenValue = prompt('Шаблоны с уникальным дизайном, с анимациями')
+    responsive = prompt('Сайт должен быть отзывчивым?')
+
+
+    screenPrice = prompt('Стоимость одного экрана?', 12000);
+
+    while (!checkIsNumber(screenPrice) || screenPrice.trim() === '' || screenPrice === null) {
+        screenPrice = prompt('Сколько это будет стоить?', 12000)
+    }
+
+    screenPrice = Number(screenPrice);
 }
 
 
@@ -70,18 +79,18 @@ const getTitle = function () {
 
 
 
-let showFullPrice = function() {
-if(fullPrice > 50000) {
-    console.log('Делаем скидку 10%');
-} else if(fullPrice > 20000 && fullPrice < 40000) {
-    console.log('Делаем скидку 5%');
-} else if(fullPrice < 20000 && fullPrice > 0) {
-    console.log('Скидка не предусмотрена');
-} else if(fullPrice < 0) {
-    console.log('Что-то пошло не так');
-} else if(fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) {
-    console.log('Строгое неравенство');
-}
+let getPercentageMessage = function(price) {
+    if(price > 50000) {
+        return 'Делаем скидку 10%';
+    } else if(price > 20000 && price < 40000) {
+        return 'Делаем скидку 5%';
+    } else if(price < 20000 && price > 0) {
+        return 'Скидка не предусмотрена';
+    } else if(price < 0) {
+        return 'Что-то пошло не так';
+    } else if(price === 0 || price === 20000 || price === 50000) {
+        return 'Строгое неравенство';
+    }
 }
 
 
@@ -100,4 +109,4 @@ console.log(responsive);
 console.log(service);
 console.log(serviceSecond);
 console.log(Math.ceil(servicePercentPrice))
-showFullPrice();
+console.log(getPercentageMessage(fullPrice))
