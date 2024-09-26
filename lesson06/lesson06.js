@@ -19,10 +19,8 @@ const checkIsNumber = function(value) {
 
 
 const asking = function() {
-    titleProject = prompt('Название проекта')
-    screenValue = prompt('Шаблоны с уникальным дизайном, с анимациями')
-    responsive = prompt('Сайт должен быть отзывчивым?')
-
+    titleProject = prompt('Название проекта', 'Калькулятор')
+    screenValue = prompt('Шаблоны с уникальным дизайном, с анимациями', 'С анимациями')
 
     screenPrice = prompt('Стоимость одного экрана?', 12000);
 
@@ -31,6 +29,8 @@ const asking = function() {
     }
 
     screenPrice = Number(screenPrice);
+
+    responsive = prompt('Сайт должен быть отзывчивым?', 'Да');
 }
 
 
