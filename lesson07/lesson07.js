@@ -48,7 +48,16 @@ const gameBotFunction = function () {
             tries--
             getResult();
         } else {
-            alert ('Вы завершили игру')
+            const isUserWantNewGame = confirm('К сожалению, вы не угадали, может хотите сыграть еще раз?')
+            if (isUserWantNewGame) {
+                tries = 3
+                musteryNumber = randomGenerate(1, 100)
+                getResult()
+            } else {
+                tries = 0
+                alert ('Вы завершили игру')
+            }
+            
             return
         }
     }
